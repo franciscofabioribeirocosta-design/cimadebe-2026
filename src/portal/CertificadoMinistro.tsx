@@ -327,23 +327,35 @@ export const CertificadoMinistro: React.FC<CertificadoMinistroProps> = ({
 
       {/* ===================================================================== */}
       {/* 1. CONTAINER A4 PAISAGEM DA MATRIZ IMUTÁVEL COM SOBREPOSIÇÃO ABSOLUTA */}
-      {/* Dimensão exata de folha A4 Paisagem a 96 DPI: 1123px x 794px           */}
-      {/* Fundo absoluto: matriz_certificado_oficial.png                        */}
       {/* ===================================================================== */}
-      <div className="w-full overflow-x-auto pb-6 flex justify-center">
-        <div
-          id="certificado-matriz-container"
-          className="relative shadow-2xl rounded-sm overflow-hidden bg-white select-none shrink-0"
-          style={{
-            width: '1123px',
-            height: '794px',
-            backgroundImage: "url('/assets/matriz_certificado_oficial.png')",
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            position: 'relative',
-          }}
-        >
+      {/* 1. CONTAINER COMPACTO DO CERTIFICADO (TAMANHO CREDENCIAL PARA VISUALIZAÇÃO) */}
+      {/* Canvas interno: 1123px x 794px (Matriz A4 Oficial).                       */}
+      {/* Visualização na tela: Card compacto de 580px x 410px (Tamanho Credencial) */}
+      {/* ===================================================================== */}
+      <div className="w-full flex flex-col items-center justify-center py-2">
+        <div className="max-w-full overflow-x-auto p-2 flex justify-center">
+          <div 
+            className="relative overflow-hidden rounded-2xl shadow-[0_0_40px_rgba(245,158,11,0.25)] border-2 border-amber-500/50 bg-white shrink-0 transition-transform"
+            style={{
+              width: '580px',
+              height: '410px',
+              position: 'relative',
+            }}
+          >
+            <div
+              id="certificado-matriz-container"
+              className="absolute top-0 left-0 shadow-2xl bg-white select-none"
+              style={{
+                width: '1123px',
+                height: '794px',
+                transform: 'scale(0.51647)',
+                transformOrigin: 'top left',
+                backgroundImage: "url('/assets/matriz_certificado_oficial.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+              }}
+            >
           {/* 1. NOME COMPLETO DO MINISTRO (SOBREPOSIÇÃO CENTRALIZADA COM FONTE INSTITUCIONAL ELEGANTE) */}
           <div
             className="absolute left-0 right-0 text-center uppercase tracking-wide font-black"
@@ -503,8 +515,14 @@ export const CertificadoMinistro: React.FC<CertificadoMinistroProps> = ({
           </div>
         </div>
       </div>
+      </div>
+      <p className="text-[11px] font-mono text-slate-400 mt-2.5 flex items-center justify-center gap-1.5 text-center">
+        <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+        <span>Visualização Otimizada (Tamanho Credencial) • O PDF baixado é emitido na matriz A4 oficial em alta resolução.</span>
+      </p>
     </div>
-  );
+  </div>
+);
 };
 
 export default CertificadoMinistro;
