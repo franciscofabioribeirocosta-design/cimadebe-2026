@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Coleções Institucionais e Portal Público
+    match /eventos/{eventoId} {
+      allow read, write: if true;
+    }
+
+    match /noticias/{noticiaId} {
+      allow read, write: if true;
+    }
+
+    match /igrejas/{igrejaId} {
+      allow read, write: if true;
+    }
+
+    match /planos_ago/{planoId} {
+      allow read, write: if true;
+    }
+
+    match /inscricoes_ago/{inscricaoId} {
+      allow read, write: if true;
+    }
+
+    match /totais_financeiros/{docId} {
+      allow read, write: if true;
+    }
+
+    match /lancamentos_ago/{lancamentoId} {
+      allow read, write: if true;
+    }
+
+    match /ministros/{ministroId} {
+      allow read, write: if true;
+    }
+
+    match /anuidades/{anuidadeId} {
+      allow read, write: if true;
+    }
+
+    match /membros_mesa_diretora/{membroId} {
+      allow read, write: if true;
+    }
+
+    match /usuarios_administrativos/{usuarioId} {
+      allow read, write: if true;
+    }
+
+    match /configuracoes_sistema/{configId} {
+      allow read, write: if true;
+    }
+
+    match /configuracoes/{configId} {
+      allow read, write: if true;
+    }
+
+    match /CadastroConvencao/{docId} {
+      allow read, write: if true;
+    }
+
+    match /audit_logs/{logId} {
+      allow read, write: if true;
+    }
+
+    match /chaves_licenca_sistema/{chaveId} {
+      allow read, write: if true;
+    }
+
+    match /registros_erros_sistema/{erroId} {
+      allow read, write: if true;
+    }
+
+    // Regra Global Aberta para Sincronização em Tempo Real e Gestão
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

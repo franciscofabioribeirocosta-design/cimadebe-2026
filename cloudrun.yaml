@@ -1,0 +1,45 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sigm-cimadebe-engine
+  labels:
+    cloud.googleapis.com/location: us-east1
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "5"
+        run.googleapis.com/cpu-throttling: "true"
+        run.googleapis.com/execution-environment: gen2
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      containers:
+      - image: gcr.io/PROJECT_ID/sigm-cimadebe-engine:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "3000"
+        - name: ASAAS_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: asaas-api-key-secret
+              key: latest
+        - name: ASAAS_WEBHOOK_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: asaas-webhook-token-secret
+              key: latest
+        - name: QR_HMAC_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: qr-hmac-secret
+              key: latest

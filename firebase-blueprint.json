@@ -1,0 +1,312 @@
+{
+  "entities": {
+    "Igreja": {
+      "title": "Igreja Filiada",
+      "description": "Registro oficial de igreja filiada à Convenção Geral",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tenantId": { "type": "string" },
+        "razaoSocial": { "type": "string" },
+        "nomeFantasia": { "type": "string" },
+        "cnpj": { "type": "string" },
+        "dataAbertura": { "type": "string" },
+        "naturezaJuridica": { "type": "string" },
+        "cnaePrincipal": { "type": "string" },
+        "situacaoCadastral": { "type": "string", "enum": ["ATIVA", "BAIXADA", "SUSPENSA"] },
+        "logradouro": { "type": "string" },
+        "numero": { "type": "string" },
+        "complemento": { "type": "string" },
+        "bairro": { "type": "string" },
+        "municipio": { "type": "string" },
+        "uf": { "type": "string" },
+        "cep": { "type": "string" },
+        "email": { "type": "string" },
+        "telefone": { "type": "string" },
+        "pastorPresidenteId": { "type": "string" },
+        "pastorPresidenteNome": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "status": { "type": "string", "enum": ["ATIVA", "SUSPENSA"] },
+        "dataFiliacao": { "type": "string" }
+      },
+      "required": ["nomeFantasia", "razaoSocial", "cnpj", "municipio", "uf"]
+    },
+    "Evento": {
+      "title": "Evento Convencional",
+      "description": "Evento oficial da Convenção Geral",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "titulo": { "type": "string" },
+        "subtitulo": { "type": "string" },
+        "data_evento": { "type": "string" },
+        "local": { "type": "string" },
+        "descricao": { "type": "string" },
+        "categoria": { "type": "string" },
+        "banner_url": { "type": "string" }
+      },
+      "required": ["titulo", "data_evento"]
+    },
+    "Noticia": {
+      "title": "Notícia Oficial",
+      "description": "Notícia e comunicado oficial da Convenção",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "titulo": { "type": "string" },
+        "subtitulo": { "type": "string" },
+        "data_publicacao": { "type": "string" },
+        "autor": { "type": "string" },
+        "conteudo": { "type": "string" },
+        "categoria": { "type": "string" },
+        "imagem_url": { "type": "string" }
+      },
+      "required": ["titulo", "conteudo"]
+    },
+    "Ministro": {
+      "title": "Ministro Filiado",
+      "description": "Cadastro oficial de ministro eclesiástico",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nome": { "type": "string" },
+        "cpf": { "type": "string" },
+        "cargo": { "type": "string" },
+        "status": { "type": "string" },
+        "email": { "type": "string" },
+        "telefone": { "type": "string" }
+      },
+      "required": ["nome", "cpf", "cargo"]
+    },
+    "MembroMesa": {
+      "title": "Membro da Mesa Diretora",
+      "description": "Membro empossado na Mesa Diretora Estatutária",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ministroId": { "type": "string" },
+        "nome": { "type": "string" },
+        "cargoMesa": { "type": "string" },
+        "mandato": { "type": "string" }
+      },
+      "required": ["ministroId", "nome", "cargoMesa"]
+    },
+    "UsuarioAdministrativo": {
+      "title": "Usuário Administrativo",
+      "description": "Operador habilitado com perfil RBAC",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ministroId": { "type": "string" },
+        "nome": { "type": "string" },
+        "cargoAdministrativo": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["ministroId", "nome", "cargoAdministrativo", "role"]
+    },
+    "AuditLog": {
+      "title": "Log de Auditoria Imutável",
+      "description": "Registro de auditoria criptográfico de mutações e acessos",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "tenantId": { "type": "string" },
+        "operador": { "type": "string" },
+        "operadorId": { "type": "string" },
+        "acao": { "type": "string" },
+        "detalhes": { "type": "string" },
+        "hashIntegridade": { "type": "string" },
+        "hashAnterior": { "type": "string" }
+      },
+      "required": ["timestamp", "tenantId", "operador", "operadorId", "acao", "detalhes", "hashIntegridade"]
+    },
+    "LancamentoAgo": {
+      "title": "Lançamento Contábil AGO",
+      "description": "Lançamento atômico de receita ou despesa da AGO",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tipo": { "type": "string", "enum": ["RECEITA", "DESPESA"] },
+        "descricao": { "type": "string" },
+        "valor": { "type": "number" },
+        "tarifaAsaas": { "type": "number" },
+        "valorLiquido": { "type": "number" },
+        "data": { "type": "string" },
+        "centroCusto": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["tipo", "descricao", "valor", "data", "centroCusto"]
+    },
+    "PlanoAgo": {
+      "title": "Plano Oficial da AGO",
+      "description": "Definição do plano de inscrição da AGO com regras de elegibilidade por cargos e benefícios",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "codigo": { "type": "string" },
+        "nome": { "type": "string" },
+        "subtitulo": { "type": "string" },
+        "valor": { "type": "number" },
+        "cargosPermitidos": { "type": "array", "items": { "type": "string" } },
+        "beneficios": { "type": "array", "items": { "type": "string" } },
+        "destaque": { "type": "boolean" },
+        "badgeDestaque": { "type": "string" },
+        "ativo": { "type": "boolean" },
+        "ordem": { "type": "number" }
+      },
+      "required": ["codigo", "nome", "valor", "cargosPermitidos", "beneficios"]
+    },
+    "InscricaoAgo": {
+      "title": "Inscrição AGO",
+      "description": "Inscrição oficial de ministro na Assembleia Geral Ordinária",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ministroId": { "type": "string" },
+        "ministroNome": { "type": "string" },
+        "ministroCpf": { "type": "string" },
+        "cargo": { "type": "string", "enum": ["Pastor", "Evangelista", "Presbítero"] },
+        "planoId": { "type": "string" },
+        "planoNome": { "type": "string" },
+        "valor": { "type": "number" },
+        "formaPagamento": { "type": "string", "enum": ["PIX", "BOLETO", "CARTAO_CREDITO"] },
+        "status": { "type": "string", "enum": ["CONFIRMADO", "PENDENTE", "CANCELADO"] },
+        "dataInscricao": { "type": "string" }
+      },
+      "required": ["ministroId", "ministroNome", "cargo", "planoId", "valor", "status"]
+    },
+    "DreAgoTotais": {
+      "title": "Totais Consolidados DRE AGO",
+      "description": "Totais atômicos consolidados calculados via runTransaction no Firestore",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "totalValorBruto": { "type": "number" },
+        "totalTarifasAsaas": { "type": "number" },
+        "totalValorConsolidado": { "type": "number" },
+        "totalDespesas": { "type": "number" },
+        "superavitLiquidoFinal": { "type": "number" },
+        "totalInscritosPagantes": { "type": "number" }
+      },
+      "required": ["totalValorBruto", "totalValorConsolidado", "totalDespesas", "superavitLiquidoFinal"]
+    },
+    "ConfiguracaoSistema": {
+      "title": "Configuração do Sistema e Status Geral",
+      "description": "Configurações institucionais e flags de ativação do bootstrap",
+      "type": "object",
+      "properties": {
+        "setup_concluido": { "type": "boolean" },
+        "chaveLicenca": { "type": "string" },
+        "nomeConvencao": { "type": "string" },
+        "sigla": { "type": "string" },
+        "cnpj": { "type": "string" },
+        "dataSetup": { "type": "string" }
+      },
+      "required": ["setup_concluido"]
+    },
+    "CadastroConvencao": {
+      "title": "Cadastro Oficial da Convenção",
+      "description": "Dados cadastrais oficiais e verdadeiros da Convenção Geral autenticados via Receita Federal",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "razaoSocial": { "type": "string" },
+        "nomeFantasia": { "type": "string" },
+        "sigla": { "type": "string" },
+        "cnpj": { "type": "string" },
+        "logomarca": { "type": "string" },
+        "dataAbertura": { "type": "string" },
+        "naturezaJuridica": { "type": "string" },
+        "cnaePrincipal": { "type": "string" },
+        "situacaoCadastral": { "type": "string" },
+        "logradouro": { "type": "string" },
+        "numero": { "type": "string" },
+        "complemento": { "type": "string" },
+        "bairro": { "type": "string" },
+        "municipio": { "type": "string" },
+        "uf": { "type": "string" },
+        "cep": { "type": "string" },
+        "email": { "type": "string" },
+        "telefone": { "type": "string" },
+        "registroRcpj": { "type": "string" },
+        "anoCriacao": { "type": "string" },
+        "chaveLicenca": { "type": "string" },
+        "dataSetup": { "type": "string" }
+      },
+      "required": ["razaoSocial", "cnpj", "municipio", "uf"]
+    },
+    "ChaveLicenca": {
+      "title": "Chave de Licença do Sistema",
+      "description": "Registro criptográfico de chaves seriais com validação de uso único",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "chaveMascarada": { "type": "string" },
+        "tipo": { "type": "string", "enum": ["HOMOLOGACAO_TESTE", "PRODUCAO_DEFINITIVA"] },
+        "status": { "type": "string", "enum": ["DISPONIVEL", "ATIVADA", "REVOGADA"] },
+        "ativacoesPermitidas": { "type": "number" },
+        "ativacoesConsumidas": { "type": "number" },
+        "geradaEm": { "type": "string" },
+        "ativadaEm": { "type": "string" },
+        "ativadaPor": { "type": "string" },
+        "hashIntegridade": { "type": "string" }
+      },
+      "required": ["status", "ativacoesPermitidas", "ativacoesConsumidas", "hashIntegridade"]
+    }
+  },
+  "firestore": {
+    "/chaves_licenca_sistema/{chaveHash}": {
+      "schema": { "$ref": "#/entities/ChaveLicenca" },
+      "description": "Ledger de validação e consumo único de chaves de licença"
+    },
+    "/CadastroConvencao/{docId}": {
+      "schema": { "$ref": "#/entities/CadastroConvencao" },
+      "description": "Cadastro e parâmetros institucionais centrais da Convenção Geral"
+    },
+    "/configuracoes_sistema/{configId}": {
+      "schema": { "$ref": "#/entities/ConfiguracaoSistema" },
+      "description": "Parâmetros institucionais e status de ativação da Convenção"
+    },
+    "/lancamentos_ago/{lancamentoId}": {
+      "schema": { "$ref": "#/entities/LancamentoAgo" },
+      "description": "Ledger de lançamentos de receitas e despesas da AGO"
+    },
+    "/dre_ago_totais/{totaisId}": {
+      "schema": { "$ref": "#/entities/DreAgoTotais" },
+      "description": "Consolidação de totais atômicos em tempo real do DRE AGO"
+    },
+    "/igrejas/{igrejaId}": {
+      "schema": { "$ref": "#/entities/Igreja" },
+      "description": "Coleção de Igrejas Filiadas à Convenção Geral"
+    },
+    "/eventos/{eventoId}": {
+      "schema": { "$ref": "#/entities/Evento" },
+      "description": "Eventos e conclaves convencionais"
+    },
+    "/noticias/{noticiaId}": {
+      "schema": { "$ref": "#/entities/Noticia" },
+      "description": "Notícias e comunicados oficiais"
+    },
+    "/ministros/{ministroId}": {
+      "schema": { "$ref": "#/entities/Ministro" },
+      "description": "Ministros filiados"
+    },
+    "/mesa_diretora/{membroId}": {
+      "schema": { "$ref": "#/entities/MembroMesa" },
+      "description": "Membros da Mesa Diretora"
+    },
+    "/usuarios_administrativos/{usuarioId}": {
+      "schema": { "$ref": "#/entities/UsuarioAdministrativo" },
+      "description": "Usuários com permissão administrativa"
+    },
+    "/audit_logs/{logId}": {
+      "schema": { "$ref": "#/entities/AuditLog" },
+      "description": "Coleção de Logs de Auditoria Criptográficos Imutáveis"
+    },
+    "/configuracoes/{configId}": {
+      "schema": { "$ref": "#/entities/AuditLog" },
+      "description": "Configurações gerais do sistema e credenciais centralizadas de APIs"
+    }
+  }
+}

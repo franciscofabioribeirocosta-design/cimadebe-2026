@@ -1,0 +1,8 @@
+{
+  "name": "CIMADEBE",
+  "description": "Ecossistema unificado CIMADEBE de alta performance bancária, ledger contábil com rastreabilidade criptográfica e gestão de ministros.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

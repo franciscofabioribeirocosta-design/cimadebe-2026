@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1123" height="794" viewBox="0 0 1123 794" version="1.1">
+  <defs>
+    <!-- Gradiente Dourado Nobre de Alta Fidelidade -->
+    <linearGradient id="certGoldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350F" />
+      <stop offset="15%" stop-color="#B45309" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#FEF08A" />
+      <stop offset="65%" stop-color="#EAB308" />
+      <stop offset="85%" stop-color="#B45309" />
+      <stop offset="100%" stop-color="#78350F" />
+    </linearGradient>
+
+    <linearGradient id="certNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B2F64" />
+      <stop offset="100%" stop-color="#061838" />
+    </linearGradient>
+
+    <!-- Fundo Perolado com Iluminação Radial -->
+    <radialGradient id="certSunburst" cx="50%" cy="50%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1.0" />
+      <stop offset="30%" stop-color="#FFFCF0" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#FEF9E7" stop-opacity="0.75" />
+      <stop offset="85%" stop-color="#FDF6D8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#FAF0C8" stop-opacity="0.3" />
+    </radialGradient>
+
+    <!-- Filtro de Sombra para Selo e Brasão -->
+    <filter id="shadowGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+
+    <!-- Padrão Micro-Segurança Guilloché de Fundo -->
+    <pattern id="guillochePattern" width="40" height="40" patternUnits="userSpaceOnUse" opacity="0.045">
+      <path d="M 0 20 Q 10 0, 20 20 T 40 20" fill="none" stroke="#B45309" stroke-width="0.8" />
+      <path d="M 0 20 Q 10 40, 20 20 T 40 20" fill="none" stroke="#0B2F64" stroke-width="0.8" />
+      <circle cx="20" cy="20" r="12" fill="none" stroke="#CA8A04" stroke-width="0.5" stroke-dasharray="2 2" />
+    </pattern>
+
+    <!-- Clip Path para a Logomarca Central de Marca d'Água -->
+    <clipPath id="watermarkCenterClip">
+      <circle cx="561" cy="397" r="195" />
+    </clipPath>
+  </defs>
+
+  <!-- ======================================================================= -->
+  <!-- 1. FUNDO DE PAPEL MOEDA / DIPLOMA COM BORDAS DOURADAS                    -->
+  <!-- ======================================================================= -->
+  <!-- Base Branca Principal -->
+  <rect width="1123" height="794" fill="#FFFFFF" />
+
+  <!-- Preenchimento Perolado Radiante -->
+  <rect width="1123" height="794" fill="url(#certSunburst)" />
+
+  <!-- Trama de Micro-Segurança Anti-Falsificação de Fundo -->
+  <rect width="1123" height="794" fill="url(#guillochePattern)" />
+
+  <!-- Moldura Dourada Externa com Bisel Duplo -->
+  <rect x="12" y="12" width="1099" height="770" fill="none" stroke="url(#certGoldBorder)" stroke-width="7" />
+  <rect x="20" y="20" width="1083" height="754" fill="none" stroke="#0B2F64" stroke-width="1.8" />
+  <rect x="26" y="26" width="1071" height="742" fill="none" stroke="url(#certGoldBorder)" stroke-width="3" />
+  <rect x="34" y="34" width="1055" height="726" fill="none" stroke="#B45309" stroke-width="0.8" stroke-dasharray="6 3" />
+
+  <!-- ======================================================================= -->
+  <!-- 2. DETALHES DE FUNDO: TRAMAS E ROSÁCEAS GUILLOCHÉ NAS LATERAIS          -->
+  <!-- ======================================================================= -->
+  <g opacity="0.12" stroke="#CA8A04" fill="none" stroke-width="0.75">
+    <!-- Ondas Sinusoidais Laterais Esquerda e Direita -->
+    <path d="M 40 100 C 140 150, 40 250, 140 350 S 40 550, 140 650" />
+    <path d="M 50 100 C 150 150, 50 250, 150 350 S 50 550, 150 650" stroke="#0B2F64" />
+    <path d="M 60 100 C 160 150, 60 250, 160 350 S 60 550, 160 650" />
+    <path d="M 1083 100 C 983 150, 1083 250, 983 350 S 1083 550, 983 650" />
+    <path d="M 1073 100 C 973 150, 1073 250, 973 350 S 1073 550, 973 650" stroke="#0B2F64" />
+    <path d="M 1063 100 C 963 150, 1063 250, 963 350 S 1063 550, 963 650" />
+
+    <!-- Rosáceas Guilloché de Fundo Superior e Inferior -->
+    <g transform="translate(561, 200)">
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(0)" />
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(15)" stroke="#0B2F64" />
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(-15)" stroke="#0B2F64" />
+    </g>
+    <g transform="translate(561, 580)">
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(0)" />
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(15)" stroke="#0B2F64" />
+      <ellipse cx="0" cy="0" rx="420" ry="85" transform="rotate(-15)" stroke="#0B2F64" />
+    </g>
+  </g>
+
+  <!-- Medalhões Ornamentais dos 4 Cantos -->
+  <g fill="#0B2F64" stroke="url(#certGoldBorder)" stroke-width="3">
+    <circle cx="48" cy="48" r="14" />
+    <circle cx="1075" cy="48" r="14" />
+    <circle cx="48" cy="746" r="14" />
+    <circle cx="1075" cy="746" r="14" />
+  </g>
+  <g fill="#FEF08A">
+    <circle cx="48" cy="48" r="5" />
+    <circle cx="1075" cy="48" r="5" />
+    <circle cx="48" cy="746" r="5" />
+    <circle cx="1075" cy="746" r="5" />
+  </g>
+  <!-- Arabescos de Canto (Filigranas) -->
+  <g stroke="url(#certGoldBorder)" stroke-width="1.8" fill="none">
+    <path d="M 28 85 Q 85 85 85 28" />
+    <path d="M 36 92 Q 92 92 92 36" />
+    <path d="M 1095 85 Q 1038 85 1038 28" />
+    <path d="M 1087 92 Q 1031 92 1031 36" />
+    <path d="M 28 709 Q 85 709 85 766" />
+    <path d="M 36 702 Q 92 702 92 758" />
+    <path d="M 1095 709 Q 1038 709 1038 766" />
+    <path d="M 1087 702 Q 1031 702 1031 758" />
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 3. A LOGO TRANSPARENTE NO FUNDO (MARCA D'ÁGUA CENTRAL OFICIAL CIMADEBE)   -->
+  <!-- ======================================================================= -->
+  <g transform="translate(561, 397)" opacity="0.18">
+    <!-- Raios Radiantes em 360 Graus (Sunburst Solene) -->
+    <g stroke="#B45309" stroke-width="1.2" opacity="0.7">
+      <line x1="0" y1="-215" x2="0" y2="-195" />
+      <line x1="37" y1="-212" x2="34" y2="-192" />
+      <line x1="73" y1="-202" x2="66" y2="-183" />
+      <line x1="107" y1="-186" x2="97" y2="-169" />
+      <line x1="138" y1="-164" x2="125" y2="-149" />
+      <line x1="164" y1="-138" x2="149" y2="-125" />
+      <line x1="186" y1="-107" x2="169" y2="-97" />
+      <line x1="202" y1="-73" x2="183" y2="-66" />
+      <line x1="212" y1="-37" x2="192" y2="-34" />
+      <line x1="215" y1="0" x2="195" y2="0" />
+      <line x1="212" y1="37" x2="192" y2="34" />
+      <line x1="202" y1="73" x2="183" y2="66" />
+      <line x1="186" y1="107" x2="169" y2="97" />
+      <line x1="164" y1="138" x2="149" y2="125" />
+      <line x1="138" y1="164" x2="125" y2="149" />
+      <line x1="107" y1="186" x2="97" y2="169" />
+      <line x1="73" y1="202" x2="66" y2="183" />
+      <line x1="37" y1="212" x2="34" y2="192" />
+      <line x1="0" y1="215" x2="0" y2="195" />
+      <line x1="-37" y1="212" x2="-34" y2="192" />
+      <line x1="-73" y1="202" x2="-66" y2="183" />
+      <line x1="-107" y1="186" x2="-97" y2="169" />
+      <line x1="-138" y1="164" x2="-125" y2="149" />
+      <line x1="-164" y1="138" x2="-149" y2="125" />
+      <line x1="-186" y1="107" x2="-169" y2="97" />
+      <line x1="-202" y1="73" x2="-183" y2="66" />
+      <line x1="-212" y1="37" x2="-192" y2="34" />
+      <line x1="-215" y1="0" x2="-195" y2="0" />
+      <line x1="-212" y1="-37" x2="-192" y2="-34" />
+      <line x1="-202" y1="-73" x2="-183" y2="-66" />
+      <line x1="-186" y1="-107" x2="-169" y2="-97" />
+      <line x1="-164" y1="-138" x2="-149" y2="-125" />
+      <line x1="-138" y1="-164" x2="-125" y2="-149" />
+      <line x1="-107" y1="-186" x2="-97" y2="-169" />
+      <line x1="-73" y1="-202" x2="-66" y2="-183" />
+      <line x1="-37" y1="-212" x2="-34" y2="-192" />
+    </g>
+
+    <!-- Círculos Concêntricos de Segurança -->
+    <circle cx="0" cy="0" r="195" fill="none" stroke="url(#certGoldBorder)" stroke-width="7" />
+    <circle cx="0" cy="0" r="185" fill="none" stroke="#0B2F64" stroke-width="3" />
+    <circle cx="0" cy="0" r="177" fill="none" stroke="#CA8A04" stroke-width="1.5" stroke-dasharray="4 3" />
+    <circle cx="0" cy="0" r="169" fill="#0B2F64" fill-opacity="0.06" />
+
+    <!-- Estrela Octogonal Heráldica / Rosa dos Ventos Central -->
+    <polygon points="0,-165 42,-42 165,0 42,42 0,165 -42,42 -165,0 -42,-42" fill="#CA8A04" fill-opacity="0.25" stroke="#78350F" stroke-width="2" />
+    <polygon points="0,-140 35,-35 140,0 35,35 0,140 -35,35 -140,0 -35,-35" fill="#0B2F64" fill-opacity="0.18" />
+
+    <!-- Círculo Interno com a Cruz da Redenção e a Bíblia Eclesiástica -->
+    <circle cx="0" cy="0" r="88" fill="#FFFFFF" fill-opacity="0.85" stroke="url(#certGoldBorder)" stroke-width="4" />
+    <circle cx="0" cy="0" r="78" fill="#0B2F64" fill-opacity="0.15" stroke="#0B2F64" stroke-width="2" stroke-dasharray="3 2" />
+
+    <!-- Cruz Sagrada Central -->
+    <path d="M -7 -60 L 7 -60 L 7 -22 L 34 -22 L 34 -10 L 7 -10 L 7 50 L -7 50 L -7 -10 L -34 -10 L -34 -22 L -7 -22 Z" fill="#78350F" fill-opacity="0.7" stroke="#FEF08A" stroke-width="1.5" />
+
+    <!-- Bíblia Sagrada Aberta aos Pés da Cruz -->
+    <path d="M -42 22 Q -21 16 0 25 Q 21 16 42 22 L 40 46 Q 20 40 0 49 Q -20 40 -40 46 Z" fill="#0B2F64" fill-opacity="0.65" stroke="#CA8A04" stroke-width="1.5" />
+
+    <!-- Sigla Institucional em Destaque na Marca d'Água -->
+    <text x="0" y="78" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#0B2F64" letter-spacing="3" text-anchor="middle">
+      CIMADEBE
+    </text>
+    <text x="0" y="94" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#78350F" letter-spacing="1.5" text-anchor="middle">
+      CONVENÇÃO NACIONAL
+    </text>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 4. CABEÇALHO INSTITUCIONAL OFICIAL (MATRIZ IMUTÁVEL)                     -->
+  <!-- ======================================================================= -->
+  <g transform="translate(561, 52)">
+    <!-- Brasão de Topo em Relevo com Fita Dourada -->
+    <g transform="translate(0, 18)" filter="url(#shadowGlow)">
+      <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="url(#certGoldBorder)" stroke-width="3.5" />
+      <circle cx="0" cy="0" r="26" fill="#0B2F64" />
+      <circle cx="0" cy="0" r="22" fill="none" stroke="#FEF08A" stroke-width="1" stroke-dasharray="2 2" />
+      <polygon points="0,-14 6,-3 15,0 6,3 0,14 -6,3 -15,0 -6,-3" fill="#FDE047" />
+      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+    </g>
+
+    <text y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#78350F" letter-spacing="3.2">REPÚBLICA FEDERATIVA DO BRASIL</text>
+    <text y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#0F172A" letter-spacing="1.5">CONVENÇÃO CIMADEBE / SIGM</text>
+    <text y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#64748B" letter-spacing="1.0">CNPJ: 039.279.303-26 • SEDE NACIONAL • REGISTRO ECLESIÁSTICO HOMOLOGADO</text>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- 5. TÍTULO OFICIAL DO CERTIFICADO                                        -->
+  <!-- ======================================================================= -->
+  <g transform="translate(561, 208)">
+    <text y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="900" fill="#854D0E" letter-spacing="3.0">CERTIFICADO DE ORDENAÇÃO</text>
+    <text y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#475569" letter-spacing="2.5">&amp; CREDENCIAMENTO ECLESIÁSTICO</text>
+  </g>
+
+  <!-- TEXTO DE INTRODUÇÃO -->
+  <text x="561" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#334155" letter-spacing="0.3">
+    Certificamos para os devidos fins de direito, perante as autoridades eclesiásticas e civis, que o(a) Revdo(a)
+  </text>
+
+  <!-- ======================================================================= -->
+  <!-- 6. CAIXA CENTRAL DOURADA PARA DESTAQUE DO CARGO (ESPACADOR RIGIDO)       -->
+  <!-- ======================================================================= -->
+  <g transform="translate(210, 440)">
+    <rect width="703" height="72" rx="12" fill="#FFFFFF" fill-opacity="0.95" stroke="url(#certGoldBorder)" stroke-width="2.5" filter="url(#shadowGlow)" />
+    <text x="351.5" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#B45309" letter-spacing="0.8">
+      Consagrado(a) ao Sagrado Ministério no Cargo Eclesiástico de:
+    </text>
+  </g>
+
+  <!-- TEXTO INSTITUCIONAL DE COMMENDATIO -->
+  <text x="561" y="582" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="500" fill="#475569" letter-spacing="0.2">
+    tendo satisfeito todas as exigências estatutárias, doutrinárias e morais, goza de plena comunhão e autoridade eclesiástica.
+  </text>
+
+  <!-- ======================================================================= -->
+  <!-- 7. SEÇÃO DE ASSINATURAS E SELO REGISTRADO (RODAPÉ INFERIOR)             -->
+  <!-- ======================================================================= -->
+  <g transform="translate(0, 680)">
+    <!-- Assinatura Presidente (Esquerda) -->
+    <g transform="translate(280, 0)">
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#475569" stroke-width="1.5" />
+      <path d="M -60 -18 Q -20 -32 20 -10 T 60 -20" fill="none" stroke="#0B2F64" stroke-width="2" stroke-linecap="round" />
+      <text y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#0F172A">PR. EZEQUIEL MOREIRA DE MATOS</text>
+      <text y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#64748B">Presidente Executivo da Convenção</text>
+    </g>
+
+    <!-- Selo Oficial Dourado / Azul (Centro) -->
+    <g transform="translate(561, -10)" filter="url(#shadowGlow)">
+      <circle cx="0" cy="0" r="32" fill="url(#certGoldBorder)" />
+      <circle cx="0" cy="0" r="28" fill="#0B2F64" stroke="#FFFFFF" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="24" fill="none" stroke="#FEF08A" stroke-width="1" stroke-dasharray="3 2" />
+      <text y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#93C5FD" letter-spacing="1.0">SELO</text>
+      <text y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" letter-spacing="0.8">OFICIAL</text>
+      <text y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.5" font-weight="bold" fill="#FDE047">REGISTRADO</text>
+    </g>
+
+    <!-- Assinatura Secretaria (Direita) -->
+    <g transform="translate(842, 0)">
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#475569" stroke-width="1.5" />
+      <path d="M -50 -15 Q 0 -30 50 -12" fill="none" stroke="#0B2F64" stroke-width="2" stroke-linecap="round" />
+      <text y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="900" fill="#0F172A">Secretaria Executiva Geral</text>
+      <text y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#64748B">Registro &amp; Credenciamento Eclesiástico</text>
+    </g>
+  </g>
+
+  <!-- QUADRO RESERVADO DO QR CODE DE VALIDAÇÃO (DIREITA) -->
+  <g transform="translate(965, 608)" filter="url(#shadowGlow)">
+    <rect width="88" height="88" rx="8" fill="#FFFFFF" stroke="url(#certGoldBorder)" stroke-width="1.5" />
+    <text x="44" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#64748B" letter-spacing="0.8">VALIDAÇÃO QR</text>
+  </g>
+
+  <!-- RODAPÉ DE AUTENTICIDADE E DADOS LEGAIS -->
+  <line x1="32" y1="738" x2="1091" y2="738" stroke="#E2E8F0" stroke-width="1" />
+  <g transform="translate(0, 755)">
+    <text x="36" y="0" font-family="Courier, monospace" font-size="8" font-weight="bold" fill="#64748B">
+      CHAVE DE AUTENTICIDADE: MATRIZ-SIGM-OFFICIAL-VERIFIED
+    </text>
+    <text x="1087" y="0" text-anchor="end" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#64748B">
+      VÁLIDO EM TODO O TERRITÓRIO NACIONAL • ART. 5º, VII CF/88
+    </text>
+  </g>
+</svg>

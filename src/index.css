@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+body {
+  background-color: rgb(2 6 23);
+  color: rgb(241 245 249);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================================================= */
+/* TEMA VIDRO FOSCO NEOFINTEL (PRONUNCIADO) - ALTA LEGIBILIDADE & GLASSMORPHISM */
+/* Ativado globalmente quando estiloTema === 'vidro-fosco'                   */
+/* ========================================================================= */
+
+.theme-glass-frosted {
+  background-color: rgb(2, 6, 23);
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(16, 185, 129, 0.16) 0%, transparent 65%),
+    radial-gradient(circle at 85% 25%, rgba(6, 182, 212, 0.10) 0%, transparent 55%),
+    radial-gradient(circle at 15% 75%, rgba(15, 23, 42, 0.70) 0%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* 1. Barras de Navegação e Menus em Vidro Fosco Pronunciado */
+.theme-glass-frosted header,
+.theme-glass-frosted nav,
+.theme-glass-frosted .glass-menu,
+.theme-glass-frosted [class*="overflow-x-auto py-2"] {
+  background-color: rgba(2, 6, 23, 0.82) !important;
+  backdrop-filter: blur(32px) saturate(210%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(210%) !important;
+  border-color: rgba(52, 211, 153, 0.28) !important;
+  box-shadow: 
+    0 12px 32px -8px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* 2. Cartões de Dashboard, Métricas e Painéis em Vidro Fosco Pronunciado */
+.theme-glass-frosted .glass-card,
+.theme-glass-frosted [class*="bg-slate-900"],
+.theme-glass-frosted [class*="bg-slate-950/80"],
+.theme-glass-frosted [class*="bg-slate-950/85"],
+.theme-glass-frosted [class*="bg-slate-950/90"],
+.theme-glass-frosted [class*="bg-slate-950/95"] {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.76) 0%, rgba(8, 15, 30, 0.86) 100%) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  border-color: rgba(52, 211, 153, 0.28) !important;
+  box-shadow: 
+    0 20px 45px -12px rgba(0, 0, 0, 0.75),
+    0 0 24px -4px rgba(16, 185, 129, 0.12),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.16) !important;
+}
+
+/* 3. Efeito de Foco e Hover Dinâmico nos Cartões de Dashboard */
+.theme-glass-frosted .glass-card:hover,
+.theme-glass-frosted [class*="bg-slate-900"]:hover,
+.theme-glass-frosted [class*="hover:bg-slate-800"]:hover,
+.theme-glass-frosted [class*="hover:border-emerald-500"]:hover,
+.theme-glass-frosted [class*="hover:border-cyan-500"]:hover,
+.theme-glass-frosted [class*="hover:border-amber-500"]:hover,
+.theme-glass-frosted [class*="hover:border-teal-500"]:hover {
+  background: linear-gradient(135deg, rgba(22, 34, 62, 0.85) 0%, rgba(12, 22, 44, 0.92) 100%) !important;
+  border-color: rgba(52, 211, 153, 0.60) !important;
+  box-shadow: 
+    0 25px 50px -10px rgba(0, 0, 0, 0.85),
+    0 0 30px -2px rgba(16, 185, 129, 0.28),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+/* 4. Modais, Diálogos e Overlays com Vidro Fosco Profundo */
+.theme-glass-frosted .glass-modal {
+  background: linear-gradient(135deg, rgba(10, 18, 36, 0.90) 0%, rgba(6, 11, 24, 0.95) 100%) !important;
+  backdrop-filter: blur(34px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(34px) saturate(220%) !important;
+  border: 1px solid rgba(52, 211, 153, 0.38) !important;
+  box-shadow: 
+    0 30px 65px -12px rgba(0, 0, 0, 0.90),
+    0 0 40px -5px rgba(16, 185, 129, 0.22),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.20) !important;
+}
+
+/* 5. Contraste e Otimização Tipográfica para o Modo Vidro Fosco */
+.theme-glass-frosted p,
+.theme-glass-frosted span,
+.theme-glass-frosted h1,
+.theme-glass-frosted h2,
+.theme-glass-frosted h3,
+.theme-glass-frosted h4 {
+  text-rendering: optimizeLegibility;
+}
+
+.theme-glass-frosted .text-slate-400 {
+  color: rgb(165 183 210) !important;
+}
+
+.theme-glass-frosted .text-slate-300 {
+  color: rgb(215 228 245) !important;
+}
+
+.theme-glass-frosted .text-slate-200 {
+  color: rgb(240 246 255) !important;
+}
+
+/* ========================================================================= */
+/* POLÍTICA DE ARREDONDAMENTO LEVE (CARDS & CONTAINERS MODERNOS E REFINADOS)  */
+/* Redução global de raios excessivos para um design leve, elegante e preciso */
+/* ========================================================================= */
+
+.rounded-3xl {
+  border-radius: 14px !important;
+}
+
+.rounded-2xl {
+  border-radius: 10px !important;
+}
+
+.rounded-xl {
+  border-radius: 7px !important;
+}
+
+.rounded-lg {
+  border-radius: 5px !important;
+}
+
+/* ========================================================================= */
+/* ULTRA-MODERN GLOWING GRADIENT SCROLLBARS                                  */
+/* ========================================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.7) 0%, rgba(6, 182, 212, 0.7) 100%);
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 1) 0%, rgba(6, 182, 212, 1) 100%);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 185, 129, 0.7) rgba(15, 23, 42, 0.3);
+}
+
+/* ========================================================================= */
+/* FIX UNIVERSAL DE SELECTS & OPTIONS (LEGIBILIDADE TOTAL COM VIDRO FOSCO)   */
+/* Impede que o texto fique branco sobre fundo branco em qualquer select     */
+/* ========================================================================= */
+select {
+  background-color: #020617 !important;
+  color: #f8fafc !important;
+}
+
+select option,
+select optgroup {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  font-family: inherit !important;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+  background-color: #047857 !important;
+  color: #ffffff !important;
+}
+
+.theme-glass-frosted select {
+  background-color: rgba(2, 6, 23, 0.95) !important;
+  color: #ffffff !important;
+}
+
+.theme-glass-frosted select option,
+.theme-glass-frosted select optgroup {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+
+
