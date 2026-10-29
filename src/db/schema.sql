@@ -145,14 +145,18 @@ ALTER TABLE audit_logs FORCE ROW LEVEL SECURITY;
 CREATE OR REPLACE FUNCTION get_current_tenant_id()
 RETURNS UUID AS $$
 DECLARE
+    jwt_claims TEXT;
     jwt_tenant TEXT;
     app_tenant TEXT;
 BEGIN
     -- Tentativa 1: JWT emitido pelo Supabase Auth
     BEGIN
-        jwt_tenant := current_setting('request.jwt.claims', true)::json->>'tenant_id';
-        IF jwt_tenant IS NOT NULL AND jwt_tenant <> '' THEN
-            RETURN jwt_tenant::UUID;
+        jwt_claims := current_setting('request.jwt.claims', true);
+        IF jwt_claims IS NOT NULL AND jwt_claims <> '' AND jwt_claims LIKE '{%}' THEN
+            jwt_tenant := jwt_claims::json->>'tenant_id';
+            IF jwt_tenant IS NOT NULL AND jwt_tenant <> '' THEN
+                RETURN jwt_tenant::UUID;
+            END IF;
         END IF;
     EXCEPTION WHEN OTHERS THEN
         -- Prossegue para próxima checagem
